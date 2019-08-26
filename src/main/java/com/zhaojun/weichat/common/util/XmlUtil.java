@@ -9,6 +9,7 @@ import com.thoughtworks.xstream.io.naming.NoNameCoder;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDomDriver;
 import com.zhaojun.weichat.common.annotaion.XStreamCDATA;
+import com.zhaojun.weichat.entity.response.Music;
 import lombok.extern.slf4j.Slf4j;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -61,7 +62,7 @@ public class XmlUtil {
      * @return
      */
     public static String toXml(Object obj) {
-        xStream.processAnnotations(obj.getClass());
+        xStream.processAnnotations(new Class[]{obj.getClass(), Music.class});
         return xStream.toXML(obj);
     }
 

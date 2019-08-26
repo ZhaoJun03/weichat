@@ -1,9 +1,7 @@
 package com.zhaojun.weichat.handler;
 
-import com.thoughtworks.xstream.XStream;
 import com.zhaojun.weichat.common.util.XmlUtil;
 import com.zhaojun.weichat.entity.response.BaseResponse;
-import org.apache.commons.text.StringEscapeUtils;
 
 import java.util.Map;
 
@@ -13,6 +11,9 @@ import java.util.Map;
  */
 
 public abstract class AbstractHandler {
+
+    //todo  改成自己的外网地址
+    public static final String LOCALHOST = "http://aau8ew.natappfree.cc";
 
     /**
      * 处理

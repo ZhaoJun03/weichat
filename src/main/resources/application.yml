@@ -3,11 +3,11 @@ server:
 
 spring:
   redis:
-    host: 47.99.205.180
+    host: //todo
     port: 6379
     database: 8
     timeout: 10000
-    password: qazwsx
+    password: //todo
     jedis:
       pool:
         max-active: 8
@@ -17,9 +17,8 @@ spring:
 
 ## 微信服务器校验token
 weichat:
-  appId: wx62cdadd6ca450a10
-  appSecret: e24ec8e5bdd56aaaf6b1976edcf47db1
+  appId: //todo
+  appSecret: //todo
   check:
     token: zhaojun
-
 

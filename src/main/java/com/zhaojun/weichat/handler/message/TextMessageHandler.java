@@ -1,8 +1,6 @@
 package com.zhaojun.weichat.handler.message;
 
-import com.zhaojun.weichat.entity.response.Image;
-import com.zhaojun.weichat.entity.response.ImageResponse;
-import com.zhaojun.weichat.entity.response.TextResponse;
+import com.zhaojun.weichat.entity.response.*;
 import com.zhaojun.weichat.common.util.RobotUtil;
 import com.zhaojun.weichat.handler.AbstractHandler;
 
@@ -34,6 +32,17 @@ public class TextMessageHandler extends AbstractHandler {
                 image.setMediaId("quYTl5ryOBMC0cYS0dP72sj8UT2slQGV-l2Rm5yEitNxa5TWNHOIkWXFI9_MqgOP");
                 imageResponse.setImage(image);
                 return convertToString(imageResponse);
+            case "音乐":
+                MusicResponse musicResponse = new MusicResponse();
+                fillBaseData(map, musicResponse);
+                Music music = new Music();
+                music.setTitle("退后");
+                music.setDescription("歌曲");
+                music.setHQMusicUrl(LOCALHOST+"/04. 退 后.flac");
+                music.setMusicUrl(LOCALHOST + "/04. 退 后.flac");
+//                music.setThumbMediaId("RkQPSkxOGo4Pr8QsEnHAPuea8g_FXeYYXXcg178lSXyMn3Xz113mMaex_hspg_eO");
+                musicResponse.setMusic(music);
+                return convertToString(musicResponse);
             default:
                 responseContent = RobotUtil.chat(content);
         }
